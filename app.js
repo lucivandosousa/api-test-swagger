@@ -4,6 +4,8 @@ const express = require("express")
 const swaggerJSDoc = require("swagger-jsdoc")
 // Importando o módulo swagger-ui-express.
 const swaggerUi = require("swagger-ui-express")
+// Importanto o módulo dist do swagger
+const { SwaggerUIBundle, SwaggerUIStandalonePreset } = require("swagger-jsdoc")
 // Importando o módulo cors
 const cors = require("cors")
 

@@ -8,6 +8,8 @@ const swaggerUi = require("swagger-ui-express")
 const { SwaggerUIBundle, SwaggerUIStandalonePreset } = require("swagger-ui-dist")
 // Importando o módulo cors
 const cors = require("cors")
+// Importanto o módulo path
+const path = require('path')
 
 // Criando uma instância da aplicação Express.
 const app = express()
@@ -42,6 +44,12 @@ const options = {
 }
 
 const swaggerSpec = swaggerJSDoc(options)
+
+//Adicionando a rota para servir o arquivo CSS do Swagger UI
+app.get("/api-docs-ui/swagger-ui-css", (req, res) => {
+  res.setHeader("Content-Type", "text/css")
+  res.sendFile(path.join(__dirname, "node_modules/swagger-ui-dist/swagger-ui-css"))
+})
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 

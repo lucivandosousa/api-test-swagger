@@ -8,18 +8,14 @@
   ],
   "rewrites": [
     {
-      "source": "/swagger-ui.css",
-      "destination": "/public/swagger-ui.css"
+      "source": "swagger-ui.css",
+      "destination": "./public/swagger-ui.css"
     }
   ],
   "routes": [
     {
       "src": "/.*",
       "dest": "app.js"
-    },
-    {
-      "src": "/api-docs/(.*)",
-      "dest": "http://localhost:3000/api-docs/$1"
     }
   ]
 }

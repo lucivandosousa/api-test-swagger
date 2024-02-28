@@ -5,8 +5,7 @@ const swaggerJSDoc = require("swagger-jsdoc")
 // Importando o módulo swagger-ui-express.
 const swaggerUi = require("swagger-ui-express")
 // Importanto o módulo dist do swagger
-// const { SwaggerUIBundle, SwaggerUIStandalonePreset } = require("swagger-ui-dist")
-const swaggerUiAssetPath = require( "swagger-ui-dist" ).getAbsoluteFSPath()
+const { SwaggerUIBundle, SwaggerUIStandalonePreset } = require("swagger-ui-dist")
 // Importando o módulo cors
 const cors = require("cors")
 // Importanto o módulo path
@@ -45,12 +44,6 @@ const options = {
 }
 
 const swaggerSpec = swaggerJSDoc(options)
-
-//Adicionando a rota para servir o arquivo CSS do Swagger UI
-app.get("/swagger-ui-css", (req, res) => {
-  res.setHeader("Content-Type", "text/css")
-  res.sendFile(path.join(__dirname, "public/swagger-ui-css"))
-})
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 

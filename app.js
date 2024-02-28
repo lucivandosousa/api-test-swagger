@@ -48,7 +48,7 @@ const swaggerSpec = swaggerJSDoc(options)
 //Adicionando a rota para servir o arquivo CSS do Swagger UI
 app.get("/api-docs-ui/swagger-ui-css", (req, res) => {
   res.setHeader("Content-Type", "text/css")
-  res.sendFile(path.join(__dirname, "node_modules/swagger-ui-dist/swagger-ui-css"))
+  res.sendFile(path.join(__dirname, "public/swagger-ui-css"))
 })
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))

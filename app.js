@@ -5,7 +5,8 @@ const swaggerJSDoc = require("swagger-jsdoc")
 // Importando o módulo swagger-ui-express.
 const swaggerUi = require("swagger-ui-express")
 // Importanto o módulo dist do swagger
-const { SwaggerUIBundle, SwaggerUIStandalonePreset } = require("swagger-ui-dist")
+// const { SwaggerUIBundle, SwaggerUIStandalonePreset } = require("swagger-ui-dist")
+const swaggerUiAssetPath = require( "swagger-ui-dist" ).getAbsoluteFSPath()
 // Importando o módulo cors
 const cors = require("cors")
 // Importanto o módulo path

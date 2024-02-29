@@ -5,7 +5,7 @@ const swaggerJSDoc = require("swagger-jsdoc")
 // Importando o módulo swagger-ui-express.
 const swaggerUi = require("swagger-ui-express")
 // Importanto o módulo dist do swagger
-const { SwaggerUIBundle, SwaggerUIStandalonePreset } = require("swagger-ui-dist")
+const swaggerDist = require("swagger-ui-dist")
 // Importando o módulo cors
 const cors = require("cors")
 
@@ -43,7 +43,6 @@ const options = {
 
 const swaggerSpec = swaggerJSDoc(options)
 
-// app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, {customCssUrl: "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css"}))
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, {
   customCssUrl: "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.11.8/swagger-ui.css",
   customJs: [
@@ -54,6 +53,8 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, {
     "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.11.8/swagger-ui-standalone-preset.js"
   ]
 }))
+
+app.use('/swagger-ui', express.static(swaggerDist.getAbsoluteFSPath()))
 
 // Array de produtos como exemplo de uma "base de dados".
 let produtos = [

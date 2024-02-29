@@ -1,8 +1,0 @@
-{
-  "rewrites": [
-    {
-      "source": "/swagger-ui-dist/**",
-      "destination": "/node_modules/swagger-ui-dist/*"
-    }
-  ]
-}

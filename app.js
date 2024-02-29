@@ -38,13 +38,12 @@ const swaggerDefinition = {
 
 const options = {
   swaggerDefinition,
-  apis: ['app.js'],
-  customCssUrl: "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css"
+  apis: ['app.js']
 }
 
 const swaggerSpec = swaggerJSDoc(options)
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, {customCssUrl: "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css"}))
 
 // Array de produtos como exemplo de uma "base de dados".
 let produtos = [

@@ -1,10 +1,4 @@
 {
-  "rewrites": [
-    {
-      "source": "/swagger-ui/:path*",
-      "destination": "/node_modules/swagger-ui-dist/:path*"
-    }
-  ],
   "version": 2,
   "builds": [
     {

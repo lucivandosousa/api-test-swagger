@@ -43,16 +43,7 @@ const options = {
 
 const swaggerSpec = swaggerJSDoc(options)
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, {
-  customCssUrl: "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.11.8/swagger-ui.css",
-  customJs: [
-    "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.11.8/swagger-ui.js",
-    "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.11.8/swagger-ui-bundle.js",
-    "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.11.8/swagger-ui-es-bundle-core.js",
-    "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.11.8/swagger-ui-es-bundle.js",
-    "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.11.8/swagger-ui-standalone-preset.js"
-  ]
-}))
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 
 app.use('/swagger-ui', express.static(swaggerDist.getAbsoluteFSPath()))
 

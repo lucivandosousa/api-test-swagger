@@ -41,6 +41,7 @@ const swaggerDefinition = {
 const options = {
   swaggerDefinition,
   apis: ['app.js'],
+  customCssUrl: './puplic/swagger-ui.css'
 }
 
 const swaggerSpec = swaggerJSDoc(options)

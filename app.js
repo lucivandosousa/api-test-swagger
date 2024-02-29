@@ -32,6 +32,10 @@ const swaggerDefinition = {
     {
       url: `http://localhost:${port}`,
       description: 'Servidor local',
+    },
+    {
+      url: "https://api-test-swagger.vercel.app",
+      description: "Servidor de produção"
     }
   ],
 }

@@ -46,7 +46,13 @@ const swaggerSpec = swaggerJSDoc(options)
 // app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, {customCssUrl: "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css"}))
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, {
   customCssUrl: "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.11.8/swagger-ui.css",
-  customJs: "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.11.8/swagger-ui.js"
+  customJs: [
+    "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.11.8/swagger-ui.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.11.8/swagger-ui-bundle.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.11.8/swagger-ui-es-bundle-core.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.11.8/swagger-ui-es-bundle.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.11.8/swagger-ui-standalone-preset.js"
+  ]
 }))
 
 // Array de produtos como exemplo de uma "base de dados".

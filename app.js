@@ -8,8 +8,6 @@ const swaggerUi = require("swagger-ui-express")
 const { SwaggerUIBundle, SwaggerUIStandalonePreset } = require("swagger-ui-dist")
 // Importando o módulo cors
 const cors = require("cors")
-// Importanto o módulo path
-const path = require('path')
 
 // Criando uma instância da aplicação Express.
 const app = express()
@@ -40,8 +38,7 @@ const swaggerDefinition = {
 
 const options = {
   swaggerDefinition,
-  apis: ['app.js'],
-  customCssUrl: './puplic/swagger-ui.css'
+  apis: ['app.js']
 }
 
 const swaggerSpec = swaggerJSDoc(options)
